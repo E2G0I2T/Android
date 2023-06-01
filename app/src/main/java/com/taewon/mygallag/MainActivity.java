@@ -6,6 +6,7 @@ import android.graphics.Point;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
@@ -46,13 +47,15 @@ public class MainActivity extends AppCompatActivity {
     public static final int PLAYER_RELOAD = 2;
     public static final int PLAYER_GET_ITEM = 3;
 
+    public static final String Tag = "bgMusicIndex";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         userIntent = getIntent(); // startActivity 에서 보낸 characterId를 userIntent에 입력
-        bgMusincIndex = 0; // bgMusincIndex 를 0으로 초기화
+        bgMusicIndex = 0; // bgMusincIndex 를 0으로 초기화
         bgMusicList = new ArrayList<Integer>(); // 배경 음악 넣을 arrayList 생성
         bgMusicList.add(R.raw.main_game_bgm1);
         bgMusicList.add(R.raw.main_game_bgm2);

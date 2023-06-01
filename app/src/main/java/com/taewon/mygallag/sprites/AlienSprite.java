@@ -34,6 +34,7 @@ public class AlienSprite extends Sprite{
         dx = randomDx; // dx = 0 ~ 4
         dy = randomDy; // dy = 1 ~ 4
         fireHandler = new Handler(Looper.getMainLooper());
+        // Main Thread 의 MessageQueue 에 바인딩
         fireHandler.postDelayed(
                 // delay를 줘서 일정 시간 후에 동작하도록 함
                 new Runnable() {
@@ -45,7 +46,7 @@ public class AlienSprite extends Sprite{
                         // 0~99 중 랜덤 숫자 + 1 (1 ~ 100) 이 30보다 작거나 같을 경우 (30%의 확률)로 isFire 가 true 가 됨
                         if(isFire && !isDestroyed){ // isFire 가 true, isDestroy 가 false 인 경우 if 문 실행
                             fire(); // 총알을 발사
-                            fireHandler.postDelayed(this, 1000); // 1 초마다 다시 반복
+                            fireHandler.postDelayed(this, 1000); // 1 초 후 실행
                         }
                     }
                 }, 1000);

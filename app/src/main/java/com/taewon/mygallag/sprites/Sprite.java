@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 
 public class Sprite {
@@ -51,6 +52,8 @@ public class Sprite {
         return RectF.intersects(this.getRect(), other.getRect());
     }
     public void handleCollision(Sprite other){} // 충돌 처리 위한 메서드
+
+
     public Bitmap getBitmap(){return bitmap;} // 현재 비트맵 이미지를 가져오거나 설정
     public void setBitmap(Bitmap bitmap){this.bitmap = bitmap;}
 }

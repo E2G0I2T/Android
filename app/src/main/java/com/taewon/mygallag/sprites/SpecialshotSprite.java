@@ -15,7 +15,7 @@ public class SpecialshotSprite extends Sprite{
         super(context, resId, x, y);
         this.game = game;
         game.getPlayer().setSpecialShooting(true); // specialShooting 을 true 로 설정하여 필살기가 사용되도록 함
-        new Timer().schedule(new TimerTask() {
+        new Timer().schedule(new TimerTask() { // timer : 주기적으로 실행되도록 함
             @Override
             public void run() {
                 autoRemove();
